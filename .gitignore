@@ -1,0 +1,14 @@
+.gradle/
+.idea/
+*/gradle/
+build/
+gradle
+.allure
+out
+.iml
+gradlew.bat
+gradlew
+target
+allure-report
+allure-results
+.DS_Store

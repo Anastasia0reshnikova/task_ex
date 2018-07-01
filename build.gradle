@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath ("io.qameta.allure:allure-gradle:2.5")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'io.qameta.allure'
+
+repositories {
+    mavenCentral()
+}
+
+allure {
+    aspectjweaver = true
+    autoconfigure = true
+    version = '2.4.1'
+    allureJavaVersion = '2.6.0'
+    reportDir = file('build/allure-report')
+    resultsDir = file('build/allure-results')
+}
+
+test {
+    useJUnit()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'com.codeborne:selenide:4.12.1'
+    compile 'org.projectlombok:lombok:1.16.20'
+    testCompile 'org.assertj:assertj-core:3.9.1'
+    compile 'com.tngtech.java:junit-dataprovider:1.13.1'
+}
