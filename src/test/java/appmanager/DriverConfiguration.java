@@ -65,6 +65,7 @@ public class DriverConfiguration {
         Configuration.savePageSource = false;
         Configuration.screenshots = true;
         Configuration.startMaximized = true;
+        Configuration.clickViaJs = true;
     }
 
     @Step("Open Converter page")
